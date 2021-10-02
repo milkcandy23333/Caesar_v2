@@ -18,9 +18,9 @@ a[Green Hand]
 b[Bad Code]
 c[Got Some Feedback]
 d[Make Progress & Improve]
-a->b
-b->c
-c->d
+a --> b
+b --> c
+c --> d
 ```
 - Please give me some issues as feedback is a gift.
 ## How to contact me?
