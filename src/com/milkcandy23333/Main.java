@@ -10,49 +10,48 @@ public class Main {
             System.out.println("Press 1 to Encrypt or 2 to Decrypt");
             System.out.println("Press 3 to calculate a string's MD5");
             System.out.println("You can't Decrypt MD5,but you can press 4.");
-            int Operator;
+            int operator, offset;
             String s;
-            int p;
-            Operator = scanner.nextInt();
+            StringBuilder ans;
+            operator = scanner.nextInt();
 
-            if (Operator == 1) {
+            if (operator == 1) {
                 System.out.println("Step 1:Enter the string to encrypt.");
                 s = scanner.nextLine();
                 s = scanner.nextLine();
                 System.out.println("Step 2:Enter the offset.");
-                p = scanner.nextInt();
+                offset = scanner.nextInt();
 
                 CaesarEncryption X = new CaesarEncryptioImpl();
-                s = X.Encrypt(s, p);
+                ans = X.encrypt(s, offset);
 
-                System.out.println(s);
+                System.out.println(ans);
             }
-            if (Operator == 2) {
+            if (operator == 2) {
                 System.out.println("Step 1:Enter the string to decrypt.");
                 s = scanner.nextLine();
                 s = scanner.nextLine();
                 System.out.println("Step 2:Enter the offset.");
-                p = scanner.nextInt();
+                offset = scanner.nextInt();
 
                 CaesarEncryption X = new CaesarEncryptioImpl();
-                s = X.Decrypt(s, p);
+                ans = X.decrypt(s, offset);
 
-                System.out.println(s);
+                System.out.println(ans);
             }
-            if (Operator == 3) {
+            if (operator == 3) {
                 System.out.println("Enter the string to calculate MD5.");
                 System.out.println("The length of the result is 32.");
                 s = scanner.nextLine();
                 s = scanner.nextLine();
 
-                Md5Encryption X = new Md5Encryption();
-                s = X.backMD5(s);
+                s = Md5Encryption.backMD5(s);
 
                 System.out.println(s);
             }
-            if (Operator == 4) {
-                Exception e = new UnsupportedOperationException();
-                e.printStackTrace();
+            if (operator == 4) {
+                Exception unsupported = new UnsupportedOperationException();
+                unsupported.printStackTrace();
                 System.out.println("UnsupportedOperationException");
                 System.out.println("异常信息： MD5 算法无法解密");
             }
