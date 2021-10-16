@@ -3,7 +3,7 @@ package com.milkcandy23333;
 public class CaesarEncryptioImpl implements CaesarEncryption {
     @Override
     public StringBuilder encrypt(String st, int p) {
-        StringBuilder result = new StringBuilder(1<<10);
+        StringBuilder result = new StringBuilder(1 << 10);
         int thisCharacter;
         int len = st.length();
         for (int i = 0; i < len; i++) {
@@ -31,14 +31,14 @@ public class CaesarEncryptioImpl implements CaesarEncryption {
                 thisCharacter += p;
             }
 
-            result.append((char)thisCharacter);
+            result.append((char) thisCharacter);
         }
         return result;
     }
 
     @Override
     public StringBuilder decrypt(String st, int p) {
-        StringBuilder result = new StringBuilder(1<<10);
+        StringBuilder result = new StringBuilder(1 << 10);
         int thisCharacter;
         int len = st.length();
         for (int i = 0; i < len; i++) {
@@ -66,7 +66,7 @@ public class CaesarEncryptioImpl implements CaesarEncryption {
                 thisCharacter -= p;
             }
 
-            result.append((char)thisCharacter);
+            result.append((char) thisCharacter);
         }
         return result;
     }

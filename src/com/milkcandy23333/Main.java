@@ -10,6 +10,7 @@ public class Main {
             System.out.println("Press 1 to Encrypt or 2 to Decrypt");
             System.out.println("Press 3 to calculate a string's MD5");
             System.out.println("You can't Decrypt MD5,but you can press 4.");
+            System.out.println("Input other integers to quit.");
             int operator, offset;
             String s;
             StringBuilder ans;
@@ -55,6 +56,8 @@ public class Main {
                 System.out.println("UnsupportedOperationException");
                 System.out.println("异常信息： MD5 算法无法解密");
             }
+            if (operator < 1 || operator > 4)
+                break;
         }
     }
 }
