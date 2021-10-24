@@ -11,9 +11,7 @@
 - It enables you to Encrypt/Decrypt Caesar password.
 - It can also generate a string's MD5 code.
 ## How to run the project?
-- The project requires JRE & JDK's support.
-- And then open an IDE to compile `src/com/milkcandy23333/Main.java`
-- Or you can add JDK's path to `PATH`,then input `javac Main.java`,and then `java Main` in CMD.
+- Please use IntellIJ IDEA, it will guide you.
 ## Why is the code's quality so bad?
 - I'm a green hand and I am not good at Java, it takes time to make progress and improve.:sweat_smile:
 ```mermaid
