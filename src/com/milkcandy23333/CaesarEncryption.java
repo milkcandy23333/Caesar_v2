@@ -1,7 +1,8 @@
 package com.milkcandy23333;
-
+/**
+ * This is a caesar encryption interface.
+ */
 public interface CaesarEncryption {
-    StringBuilder encrypt(String st, int p);
 
-    StringBuilder decrypt(String st, int p);
+    String getResult(String st, int p);
 }

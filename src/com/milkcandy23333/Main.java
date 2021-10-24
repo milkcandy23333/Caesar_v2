@@ -4,60 +4,57 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("This is a Caesar encryption/decryption program");
+        System.out.println("Press 1 to Encrypt or 2 to Decrypt");
+        System.out.println("Press 3 to calculate a string's MD5");
+        System.out.println("You can't Decrypt MD5,but you can press 4.");
+        System.out.println();
+        System.out.println("the priority: 1>2>3>4, for example:");
+        System.out.println("When you input 12341234, we will run 11223344");
+        System.out.println("When you input 2434, we will run 2344");
+
         Scanner scanner = new Scanner(System.in);
-        while (true) {
-            System.out.println("This is a Caesar encryption/decryption program");
-            System.out.println("Press 1 to Encrypt or 2 to Decrypt");
-            System.out.println("Press 3 to calculate a string's MD5");
-            System.out.println("You can't Decrypt MD5,but you can press 4.");
-            System.out.println("Input other integers to quit.");
-            int operator, offset;
-            String s;
-            StringBuilder ans;
-            operator = scanner.nextInt();
+        String operator;
+        String s;
+        operator = scanner.nextLine();
 
-            if (operator == 1) {
-                System.out.println("Step 1:Enter the string to encrypt.");
-                s = scanner.nextLine();
-                s = scanner.nextLine();
-                System.out.println("Step 2:Enter the offset.");
-                offset = scanner.nextInt();
+        int pos = -1;
 
-                CaesarEncryption X = new CaesarEncryptioImpl();
-                ans = X.encrypt(s, offset);
-
-                System.out.println(ans);
-            }
-            if (operator == 2) {
-                System.out.println("Step 1:Enter the string to decrypt.");
-                s = scanner.nextLine();
-                s = scanner.nextLine();
-                System.out.println("Step 2:Enter the offset.");
-                offset = scanner.nextInt();
-
-                CaesarEncryption X = new CaesarEncryptioImpl();
-                ans = X.decrypt(s, offset);
-
-                System.out.println(ans);
-            }
-            if (operator == 3) {
-                System.out.println("Enter the string to calculate MD5.");
-                System.out.println("The length of the result is 32.");
-                s = scanner.nextLine();
-                s = scanner.nextLine();
-
-                s = Md5Encryption.backMD5(s);
-
+        do {
+            pos = operator.indexOf("1", pos + 1);
+            if (pos != -1) {
+                CaesarEncryptioImpl X = new CaesarEncryptioImpl();
+                s = X.encryptWizard();
                 System.out.println(s);
             }
-            if (operator == 4) {
-                Exception unsupported = new UnsupportedOperationException();
-                unsupported.printStackTrace();
-                System.out.println("UnsupportedOperationException");
-                System.out.println("异常信息： MD5 算法无法解密");
+        } while (pos != -1);
+
+        do {
+            pos = operator.indexOf("2", pos + 1);
+            if (pos != -1) {
+                CaesarEncryptioImpl X = new CaesarEncryptioImpl();
+                s = X.decryptWizard();
+                System.out.println(s);
             }
-            if (operator < 1 || operator > 4)
-                break;
-        }
+        } while (pos != -1);
+
+        do {
+            pos = operator.indexOf("3", pos + 1);
+            if (pos != -1) {
+                Md5EncryptionImpl X = new Md5EncryptionImpl();
+                s=X.encryptWizard();
+                System.out.println(s);
+            }
+        } while (pos != -1);
+
+        do {
+            pos = operator.indexOf("4", pos + 1);
+            if (pos != -1) {
+                Md5EncryptionImpl X = new Md5EncryptionImpl();
+                X.decryptWizard();
+            }
+        } while (pos != -1);
+
+        System.out.println("This program has finished its tasks.^_^");
     }
 }
