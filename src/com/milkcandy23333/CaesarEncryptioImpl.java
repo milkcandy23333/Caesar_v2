@@ -3,6 +3,9 @@ package com.milkcandy23333;
 import java.util.Scanner;
 
 public class CaesarEncryptioImpl implements CaesarEncryption, wizardInterface {
+    private String result;
+    private int offset;
+
     /**
      * encrypt/decrypt st,its offset is p
      * if p>0,a->b->c->d..
@@ -62,8 +65,6 @@ public class CaesarEncryptioImpl implements CaesarEncryption, wizardInterface {
      */
     @Override
     public String encryptWizard() {
-        String result;
-        int offset;
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Step 1:Enter the string to encrypt.");
@@ -82,8 +83,6 @@ public class CaesarEncryptioImpl implements CaesarEncryption, wizardInterface {
      */
     @Override
     public String decryptWizard() {
-        String result;
-        int offset;
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Step 1:Enter the string to decrypt.");

@@ -4,6 +4,8 @@ import java.security.MessageDigest;
 import java.util.Scanner;
 
 public class Md5EncryptionImpl implements Md5Encryption, wizardInterface {
+    private String result;
+
     /**
      * calculate a string's MD5 code
      *
@@ -44,7 +46,6 @@ public class Md5EncryptionImpl implements Md5Encryption, wizardInterface {
      * @return MD5 code
      */
     public String encryptWizard() {
-        String result;
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter the string to calculate MD5.");
