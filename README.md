@@ -1,5 +1,9 @@
 # Caesar_v2
 网络服务协会技术部考核然后大家都在卷，我这边实在是难顶啊
+## Notice
+- **In fact, in my opinion, it's highly recommended that we should delete the CaesarEncryption interface and the Md5Encryption interface, and use the wizardInterface instead, then let the Caesar and the MD5 implements the wizardInterface.**
+- **Because the method getResult(...) should be private, and the wizard should be public instead.**
+- **However, if we set the method getResult(...) private, the interface must be deleted.**
 ## Why do I create this repoitory?
 - 网络服务协会技术部考核然后大家都在卷，我这边实在是难顶啊
 - I don't want to translate it into English and you don't need to understand.
